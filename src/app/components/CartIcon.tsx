@@ -1,4 +1,4 @@
-// components/CartIcon.tsx
+// Modified CartIcon.tsx
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { FaShoppingCart } from "react-icons/fa";
@@ -17,7 +17,11 @@ interface CartItem {
   quantity: number;
 }
 
-const CartIcon = () => {
+interface CartIconProps {
+  withoutLink?: boolean;
+}
+
+const CartIcon = ({ withoutLink = false }: CartIconProps) => {
   const [itemCount, setItemCount] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
 
@@ -60,19 +64,29 @@ const CartIcon = () => {
     };
   }, [itemCount]);
 
+  const cartContent = (
+    <div className="p-2 hover:bg-gray-800 rounded-full transition-colors">
+      <FaShoppingCart
+        size={20}
+        className={isAnimating ? "animate-bounce" : ""}
+      />
+      {itemCount > 0 && (
+        <span className="absolute -top-1 -right-1 bg-purple-600 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
+          {itemCount}
+        </span>
+      )}
+    </div>
+  );
+
+  // If withoutLink is true, don't wrap in Link component
+  if (withoutLink) {
+    return <div className="relative">{cartContent}</div>;
+  }
+
+  // Otherwise, wrap in Link as before
   return (
     <Link href="/cart" className="relative">
-      <div className="p-2 hover:bg-gray-800 rounded-full transition-colors">
-        <FaShoppingCart
-          size={20}
-          className={isAnimating ? "animate-bounce" : ""}
-        />
-        {itemCount > 0 && (
-          <span className="absolute -top-1 -right-1 bg-purple-600 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
-            {itemCount}
-          </span>
-        )}
-      </div>
+      {cartContent}
     </Link>
   );
 };

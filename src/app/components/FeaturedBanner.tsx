@@ -142,14 +142,15 @@ const FeaturedBanner = () => {
               Designed for those who demand the extraordinary.
             </motion.p>
 
-            <motion.button
-              className="bg-transparent hover:bg-white/10 text-white border border-white py-3 px-10 uppercase font-bold tracking-wider transition-all text-lg"
+            <motion.a
+              href="/collection"
+              className="inline-block bg-transparent hover:bg-white/10 text-white border border-white py-3 px-10 uppercase font-bold tracking-wider transition-all text-lg"
               variants={buttonVariants}
               whileHover="hover"
               whileTap={{ scale: 0.95 }}
             >
               EXPLORE COLLECTION
-            </motion.button>
+            </motion.a>
           </div>
 
           <div className="md:w-2/3 relative">

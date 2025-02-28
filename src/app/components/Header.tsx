@@ -128,7 +128,7 @@ const Header = () => {
         <div className="flex items-center space-x-6">
           <motion.div whileHover={{ scale: 1.2, rotate: 5 }}>
             <Link href="/cart" className="text-white text-xl">
-              <CartIcon />
+              <CartIcon withoutLink={true} />
             </Link>
           </motion.div>
           <motion.button

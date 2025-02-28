@@ -1,6 +1,5 @@
 // components/Home.tsx or app/page.tsx
 "use client";
-
 import React from "react";
 import Header from "./components/Header";
 import HeroCarousel from "./components/HeroCarousel";
