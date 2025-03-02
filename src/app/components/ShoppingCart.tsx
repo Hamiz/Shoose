@@ -305,10 +305,25 @@ const ShoppingCart = () => {
                 <div className="mt-6 text-xs text-gray-400 text-center">
                   <p>We accept all major credit cards</p>
                   <div className="flex justify-center gap-2 mt-2">
-                    <div className="w-10 h-6 bg-gray-700 rounded"></div>
-                    <div className="w-10 h-6 bg-gray-700 rounded"></div>
-                    <div className="w-10 h-6 bg-gray-700 rounded"></div>
-                    <div className="w-10 h-6 bg-gray-700 rounded"></div>
+                    {[
+                      "visa",
+                      "mastercard",
+                      "paypal",
+                      "apple-pay",
+                      "google-pay",
+                    ].map((payment) => (
+                      <div
+                        key={payment}
+                        className="w-12 h-8 backdrop-blur-sm rounded flex items-center justify-center"
+                      >
+                        <Image
+                          src={`/payment-icons/${payment}.png`}
+                          alt={payment}
+                          width={24}
+                          height={16}
+                        />
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>

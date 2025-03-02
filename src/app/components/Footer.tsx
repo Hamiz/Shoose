@@ -181,10 +181,10 @@ const Footer = () => {
                   className="block w-32 hover:opacity-80 transition-opacity"
                 >
                   <Image
-                    src="/app-store-badge.png"
+                    src="/pngegg.png"
                     alt="App Store"
-                    width={128}
-                    height={40}
+                    width={90}
+                    height={25}
                   />
                 </a>
                 <a
@@ -192,10 +192,10 @@ const Footer = () => {
                   className="block w-32 hover:opacity-80 transition-opacity"
                 >
                   <Image
-                    src="/play-store-badge.png"
+                    src="/pngegg (2).png"
                     alt="Play Store"
-                    width={128}
-                    height={40}
+                    width={90}
+                    height={25}
                   />
                 </a>
               </div>
@@ -224,10 +224,10 @@ const Footer = () => {
             (payment) => (
               <div
                 key={payment}
-                className="w-12 h-8 bg-white/10 backdrop-blur-sm rounded flex items-center justify-center"
+                className="w-12 h-8 backdrop-blur-sm rounded flex items-center justify-center"
               >
                 <Image
-                  src={`/payment-icons/${payment}.svg`}
+                  src={`/payment-icons/${payment}.png`}
                   alt={payment}
                   width={24}
                   height={16}

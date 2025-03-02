@@ -1,12 +1,21 @@
 // src/app/product/page.tsx
 "use client";
 
+import { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
-import ProductDetail from "..//components/ProductDetail";
+import ProductDetail from "../components/ProductDetail";
 
-export default function Page() {
+function ProductPage() {
   const searchParams = useSearchParams();
   const id = searchParams.get("id");
 
   return <ProductDetail id={id} />;
+}
+
+export default function Page() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ProductPage />
+    </Suspense>
+  );
 }
